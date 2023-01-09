@@ -110,8 +110,9 @@ app.post(
         let info = await transporter.sendMail({
           from: process.env.email, // sender address
           to: emailto, // list of receivers
-          subject: "Thanks for the payment for the product", // Subject line
-          text: "Thanks for the payment for the product", // plain text body
+          subject:
+            "Thanks for the payment for the product, we really appreciate your business!", // Subject line
+          text: "Thanks for the payment for the product, come again!", // plain text body
           html: `
     
     Hello ${session.customer_details.email} Thanks for the payment for the product
@@ -119,7 +120,7 @@ app.post(
     `, // html body
         });
 
-        console.log("Message sent: %s", info.messageId);
+        console.log("Message sent :): %s", info.messageId);
 
         break;
       // ... handle other event types
